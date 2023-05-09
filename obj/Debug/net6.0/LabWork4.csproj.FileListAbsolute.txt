@@ -1,0 +1,15 @@
+/Users/tribuadmin/Documents/University/C#/LabWork4/bin/Debug/net6.0/LabWork4
+/Users/tribuadmin/Documents/University/C#/LabWork4/bin/Debug/net6.0/LabWork4.deps.json
+/Users/tribuadmin/Documents/University/C#/LabWork4/bin/Debug/net6.0/LabWork4.runtimeconfig.json
+/Users/tribuadmin/Documents/University/C#/LabWork4/bin/Debug/net6.0/LabWork4.dll
+/Users/tribuadmin/Documents/University/C#/LabWork4/bin/Debug/net6.0/LabWork4.pdb
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.csproj.AssemblyReference.cache
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.AssemblyInfoInputs.cache
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.AssemblyInfo.cs
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.csproj.CoreCompileInputs.cache
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.dll
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/refint/LabWork4.dll
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.pdb
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/LabWork4.genruntimeconfig.cache
+/Users/tribuadmin/Documents/University/C#/LabWork4/obj/Debug/net6.0/ref/LabWork4.dll
