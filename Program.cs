@@ -51,10 +51,72 @@ namespace LabWork4
 
         static void DoBlock1()
         {
+            int[] array = GetFilledArray();
             dynamic instanceRef = DefineStudentSolutionLoad();
-            instanceRef.DoBlock1();
+            instanceRef.DoBlock1(array);
 
         }
+        static int[] GetFilledArray()
+        {
+            Console.WriteLine("Enter 1 - to fill array manually");
+            Console.WriteLine("Enter 2 - to fill array randomy");
+
+            int choice = GetEnteredChoice();
+            if (choice != 1 && choice != 2)
+            {
+                HandleWrongUserChoice();
+            }
+
+
+            switch (choice)
+            {
+                case 1:
+                    return GetManualyFilledArray();
+                default:
+                    return GetRandomFilledArray();
+            }
+
+        }
+
+
+        static int[] GetManualyFilledArray()
+        {
+            Console.Write("Enter the number of elements: ");
+            int count = Convert.ToInt32(Console.ReadLine());
+
+            int[] array = new int[count];
+
+            Console.WriteLine("Enter the elements:");
+
+            for (int i = 0; i < count; i++)
+            {
+                Console.Write($"Element {i + 1}: ");
+                array[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            return array;
+        }
+
+
+        static int[] GetRandomFilledArray()
+        {
+
+
+            int[] array = new int[10];
+            Random random = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                array[i] = random.Next(100);
+            }
+
+            Console.WriteLine("Random Array: ");
+            Console.WriteLine(string.Join(" ", array));
+            return array;
+        }
+
+
+
         static void DoBlock2()
         {
             dynamic instanceRef = DefineStudentSolutionLoad();
