@@ -7,7 +7,7 @@ namespace LabWork4
 {
     public class Vasilchenko : BaseTaskInterface
     {
-        public void DoBlock1()
+        public void DoBlock1(int[]? array)
         {
             Console.WriteLine("Vasilchenko.DoBlock1() runs...");
         }
