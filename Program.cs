@@ -11,7 +11,7 @@ namespace LabWork4
 
         static void GetUserPreference()
         {
-            Console.Write("\n Enter number of block (from 1 - to 4) to run: ");
+            Console.Write("\n Enter number of block (from 1 - to 3) to run: ");
 
             int choice = GetEnteredChoice();
             if (choice == 0) { HandleWrongUserChoice(); }
@@ -30,9 +30,6 @@ namespace LabWork4
                     break;
                 case 3:
                     DoBlock3();
-                    break;
-                case 4:
-                    DoBlock4();
                     break;
                 default:
                     HandleWrongUserChoice();
@@ -126,11 +123,6 @@ namespace LabWork4
         {
             dynamic instanceRef = DefineStudentSolutionLoad();
             instanceRef.DoBlock3();
-        }
-        static void DoBlock4()
-        {
-            dynamic instanceRef = DefineStudentSolutionLoad();
-            instanceRef.DoBlock4();
         }
 
         static dynamic DefineStudentSolutionLoad()
