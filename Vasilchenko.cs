@@ -87,10 +87,5 @@ namespace LabWork4
             Console.WriteLine("Vasilchenko.DoBlock3() runs...");
 
         }
-        public void DoBlock4()
-        {
-            Console.WriteLine("Vasilchenko.DoBlock4() runs...");
-
-        }
     }
 }
