@@ -53,6 +53,11 @@ namespace LabWork4
             Console.WriteLine("Shpotak.DoBlock2() runs...");
 
         }
+
+
+
+
+
         public void DoBlock3()
         {
             Console.WriteLine("Shpotak.DoBlock3() runs...");
