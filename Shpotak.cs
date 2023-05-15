@@ -26,7 +26,6 @@ namespace LabWork4
                 }
             }
 
-            // Create a new array with only even elements
             int[] newArray = new int[count];
             int index = 0;
             foreach (int value in array)
@@ -38,13 +37,10 @@ namespace LabWork4
                 }
             }
 
-            // Resize the original array to match the size of the new array
             Array.Resize(ref array, newArray.Length);
 
-            // Copy the contents of the new array back into the original array
             Array.Copy(newArray, array, newArray.Length);
 
-            // Print the resulting array
             foreach (int value in array)
             {
                 Console.Write(value + " ");
@@ -57,6 +53,11 @@ namespace LabWork4
             Console.WriteLine("Shpotak.DoBlock2() runs...");
 
         }
+
+
+
+
+
         public void DoBlock3()
         {
             Console.WriteLine("Shpotak.DoBlock3() runs...");
