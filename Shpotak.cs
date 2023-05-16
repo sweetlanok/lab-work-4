@@ -12,8 +12,6 @@ namespace LabWork4
             Console.WriteLine("Shpotak.DoBlock1() runs...");
             int[] res = RemoveElementsFromArray(array);
             Console.WriteLine(res + " ");
-
-
         }
         static int[] RemoveElementsFromArray(int[] array)
         {
@@ -48,21 +46,82 @@ namespace LabWork4
             }
             return array;
         }
-        public void DoBlock2()
+        public void DoBlock2(int[][]? array)
         {
             Console.WriteLine("Shpotak.DoBlock2() runs...");
-
+            int[][] res = DeleteEvenRows(array);
+            Console.WriteLine(res + " ");
         }
 
 
+        static int[][] DeleteEvenRows(int[][] jaggedArray)
+        {
+            int rowCount = jaggedArray.Length;
+            int[][] updatedArray = new int[rowCount][];
+            int updatedRowCount = 0;
 
+            for (int i = 0; i < rowCount; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    updatedArray[updatedRowCount] = jaggedArray[i];
+                    updatedRowCount++;
+                }
+            }
 
+            Array.Resize(ref updatedArray, updatedRowCount);
 
-        public void DoBlock3()
+            return updatedArray;
+        }
+
+        static void PrintJaggedArray(int[][] jaggedArray)
+        {
+            foreach (int[] row in jaggedArray)
+            {
+                foreach (int element in row)
+                {
+                    Console.Write(element + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+        public void DoBlock3(int[][]? array)
         {
             Console.WriteLine("Shpotak.DoBlock3() runs...");
-
+            int[] res = SortAndInvert(array);
+            Console.WriteLine(res + " ");
         }
+        static int[] SortAndInvert(int[][] matrix)
+        {
+
+            Array.Sort(matrix, (x, y) => x.Length.CompareTo(y.Length));
+
+            int totalRows = matrix.Length;
+            int[] resultArray = new int[totalRows];
+
+
+            for (int i = 0; i < totalRows; i++)
+            {
+                int[] row = matrix[i];
+                int maxElement = row[0];
+
+                for (int j = 1; j < row.Length; j++)
+                {
+                    if (row[j] > maxElement)
+                    {
+                        maxElement = row[j];
+                    }
+                }
+
+                resultArray[i] = maxElement;
+            }
+
+
+            Array.Reverse(resultArray);
+
+            return resultArray;
+        }
+
         public void DoBlock4()
         {
             Console.WriteLine("Shpotak.DoBlock4() runs...");
