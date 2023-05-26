@@ -8,8 +8,8 @@ namespace LabWork4
     public interface BaseTaskInterface
     {
         void DoBlock1(int[]? array);
-        void DoBlock2();
-        void DoBlock3();
+        void DoBlock2(int[][]? array);
+        void DoBlock3(int[][]? array);
         void DoBlock4();
 
     }
