@@ -297,7 +297,7 @@ namespace LabWork4
         {
 
             Console.WriteLine("Enter 1 to Vasilchenko");
-            Console.WriteLine("Enter 1 to Shpotak");
+            Console.WriteLine("Enter 2 to Shpotak");
 
             int choice = GetEnteredChoice();
             if (choice != 1 && choice != 2)
