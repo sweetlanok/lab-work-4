@@ -296,7 +296,8 @@ namespace LabWork4
         static dynamic DefineStudentSolutionLoad()
         {
 
-            Console.WriteLine("Enter 1 to continue");
+            Console.WriteLine("Enter 1 to Vasilchenko");
+            Console.WriteLine("Enter 1 to Shpotak");
 
             int choice = GetEnteredChoice();
             if (choice != 1 && choice != 2)
