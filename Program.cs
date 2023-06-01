@@ -116,19 +116,187 @@ namespace LabWork4
 
         static void DoBlock2()
         {
+
+            int[][] array = GetFilledArrayForTasks();
             dynamic instanceRef = DefineStudentSolutionLoad();
-            instanceRef.DoBlock2();
+            instanceRef.DoBlock2(array);
+        }
+
+
+        static int[][] GetFilledArrayForTasks()
+        {
+            Console.WriteLine("Enter 1 - to fill array manually");
+            Console.WriteLine("Enter 2 - to fill array randomy");
+
+            int choice = GetEnteredChoice();
+            if (choice != 1 && choice != 2)
+            {
+                HandleWrongUserChoice();
+            }
+
+
+            switch (choice)
+            {
+                case 1:
+                    return GetManualyFilledArrayForTasks();
+                default:
+                    return GetRandomFilledArrayForTasks();
+            }
+
+        }
+
+
+        static int[][] GetManualyFilledArrayForTasks()
+        {
+            Console.Write("Enter the number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+
+            int[][] jaggedArray = new int[rows][];
+
+            for (int i = 0; i < rows; i++)
+            {
+                Console.Write($"Enter the number of elements in row {i + 1}: ");
+                int columns = int.Parse(Console.ReadLine());
+                jaggedArray[i] = new int[columns];
+
+                Console.WriteLine($"Enter {columns} elements for row {i + 1}:");
+                string[] elements = Console.ReadLine().Split(' ');
+
+                for (int j = 0; j < columns; j++)
+                {
+                    jaggedArray[i][j] = int.Parse(elements[j]);
+                }
+            }
+
+            return jaggedArray;
+        }
+
+
+        static int[][] GetRandomFilledArrayForTasks()
+        {
+            Console.Write("Enter number of row: ");
+            int rowCount = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of minColumn: ");
+            int minColumnCount = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of maxColumn: ");
+            int maxColumnCount = int.Parse(Console.ReadLine());
+
+            int[][] jaggedArray = new int[rowCount][];
+
+            Random random = new Random();
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                int columnCount = random.Next(minColumnCount, maxColumnCount + 1);
+                jaggedArray[i] = new int[columnCount];
+
+                for (int j = 0; j < columnCount; j++)
+                {
+                    jaggedArray[i][j] = random.Next(-10, 20);
+                }
+            }
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.Write(jaggedArray[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+            return jaggedArray;
         }
         static void DoBlock3()
         {
+            int[][] arraytask3 = GetFilledArrayForTask3();
             dynamic instanceRef = DefineStudentSolutionLoad();
-            instanceRef.DoBlock3();
+            instanceRef.DoBlock3(arraytask3);
+        }
+        static int[][] GetFilledArrayForTask3()
+        {
+            Console.WriteLine("Enter 1 - to fill array manually");
+            Console.WriteLine("Enter 2 - to fill array randomy");
+
+            int choice = GetEnteredChoice();
+            if (choice != 1 && choice != 2)
+            {
+                HandleWrongUserChoice();
+            }
+
+
+            switch (choice)
+            {
+                case 1:
+                    return GetManualyFilledArrayForTask3();
+                default:
+                    return GetRandomFilledArrayForTask3();
+            }
+
+        }
+
+
+        static int[][] GetManualyFilledArrayForTask3()
+        {
+            Console.Write("Enter the number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+
+            int[][] jaggedArray = new int[rows][];
+
+            for (int i = 0; i < rows; i++)
+            {
+                Console.Write($"Enter the number of elements in row {i}: ");
+                int columns = int.Parse(Console.ReadLine());
+
+                jaggedArray[i] = new int[columns];
+
+                Console.WriteLine($"Enter {columns} elements for row {i}:");
+                string[] elements = Console.ReadLine().Split(' ');
+
+                for (int j = 0; j < columns; j++)
+                {
+                    jaggedArray[i][j] = int.Parse(elements[j]);
+                }
+            }
+            return jaggedArray;
+        }
+
+
+        static int[][] GetRandomFilledArrayForTask3()
+        {
+            Console.Write("Enter number of row: ");
+            int rowCount = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of minColumn: ");
+            int minColumnCount = int.Parse(Console.ReadLine());
+            Console.Write("Enter number of maxColumn: ");
+            int maxColumnCount = int.Parse(Console.ReadLine());
+
+            int[][] jaggedArray = new int[rowCount][];
+
+            Random random = new Random();
+
+            for (int i = 0; i < rowCount; i++)
+            {
+                int columnCount = random.Next(minColumnCount, maxColumnCount + 1);
+                jaggedArray[i] = new int[columnCount];
+                for (int j = 0; j < columnCount; j++)
+                {
+                    jaggedArray[i][j] = random.Next(-10, 20);
+                }
+            }
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < jaggedArray[i].Length; j++)
+                {
+                    Console.Write(jaggedArray[i][j] + " ");
+                }
+                Console.WriteLine();
+            }
+            return jaggedArray;
         }
 
         static dynamic DefineStudentSolutionLoad()
         {
-            Console.WriteLine("Enter 1 - to load 'Vasilchenko.cs");
-            Console.WriteLine("Enter 2 - to load 'Shpotak.cs");
+
+            Console.WriteLine("Enter 1 to continue");
 
             int choice = GetEnteredChoice();
             if (choice != 1 && choice != 2)
