@@ -62,7 +62,7 @@ namespace LabWork4
 
             for (int i = 0; i < rowCount; i++)
             {
-                if (i % 2 != 0)
+                if (i % 2 == 0)
                 {
                     updatedArray[updatedRowCount] = jaggedArray[i];
                     updatedRowCount++;
