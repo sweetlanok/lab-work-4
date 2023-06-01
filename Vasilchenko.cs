@@ -77,12 +77,12 @@ namespace LabWork4
         }
 
 
-        public void DoBlock2()
+        public void DoBlock2(int[][]? array)
         {
             Console.WriteLine("Vasilchenko.DoBlock2() runs...");
 
         }
-        public void DoBlock3()
+        public void DoBlock3(int[][]? array)
         {
             Console.WriteLine("Vasilchenko.DoBlock3() runs...");
 

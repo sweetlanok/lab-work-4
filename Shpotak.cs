@@ -42,7 +42,6 @@ namespace LabWork4
             foreach (int value in array)
             {
                 Console.Write(value + " ");
-
             }
             return array;
         }
@@ -50,81 +49,71 @@ namespace LabWork4
         {
             Console.WriteLine("Shpotak.DoBlock2() runs...");
             int[][] res = DeleteEvenRows(array);
-            Console.WriteLine(res + " ");
+            PrintJaggedArray(res);
         }
 
 
         static int[][] DeleteEvenRows(int[][] jaggedArray)
         {
             int rowCount = jaggedArray.Length;
-            int[][] updatedArray = new int[rowCount][];
-            int updatedRowCount = 0;
+            int[][] result = new int[rowCount / 2][];
 
+            int index = 0;
             for (int i = 0; i < rowCount; i++)
             {
                 if (i % 2 != 0)
                 {
-                    updatedArray[updatedRowCount] = jaggedArray[i];
-                    updatedRowCount++;
+                    result[index] = jaggedArray[i];
+                    index++;
                 }
             }
 
-            Array.Resize(ref updatedArray, updatedRowCount);
-
-            return updatedArray;
+            return result;
         }
 
         static void PrintJaggedArray(int[][] jaggedArray)
         {
-            foreach (int[] row in jaggedArray)
+            for (int i = 0; i < jaggedArray.Length; i++)
             {
-                foreach (int element in row)
+                for (int j = 0; j < jaggedArray[i].Length; j++)
                 {
-                    Console.Write(element + " ");
+                    Console.Write(jaggedArray[i][j] + " ");
                 }
                 Console.WriteLine();
             }
         }
+
+
         public void DoBlock3(int[][]? array)
         {
             Console.WriteLine("Shpotak.DoBlock3() runs...");
-            int[] res = SortAndInvert(array);
-            Console.WriteLine(res + " ");
+            int[] res = SortAndInvertJaggedArray(array);
+            foreach (int num in res)
+            {
+                Console.Write(num + " ");
+            }
         }
-        static int[] SortAndInvert(int[][] matrix)
+
+
+        public static int[] SortAndInvertJaggedArray(int[][] jaggedArray)
         {
 
-            Array.Sort(matrix, (x, y) => x.Length.CompareTo(y.Length));
-
-            int totalRows = matrix.Length;
-            int[] resultArray = new int[totalRows];
-
-
-            for (int i = 0; i < totalRows; i++)
+            foreach (int[] row in jaggedArray)
             {
-                int[] row = matrix[i];
-                int maxElement = row[0];
-
-                for (int j = 1; j < row.Length; j++)
-                {
-                    if (row[j] > maxElement)
-                    {
-                        maxElement = row[j];
-                    }
-                }
-
-                resultArray[i] = maxElement;
+                Array.Sort(row);
             }
 
 
-            Array.Reverse(resultArray);
+            int[] largestElements = new int[jaggedArray.Length];
+            for (int i = 0; i < jaggedArray.Length; i++)
+            {
+                int[] row = jaggedArray[i];
+                largestElements[i] = row[row.Length - 1];
+            }
+            Array.Sort(largestElements);
+            Array.Reverse(largestElements);
 
-            return resultArray;
-        }
-
-        public void DoBlock4()
-        {
-            Console.WriteLine("Shpotak.DoBlock4() runs...");
+            return largestElements;
         }
     }
 }
